@@ -1,2 +1,3 @@
-export function someGetter (/* state */) {
+export function getCount (state) {
+  return state.counter
 }
