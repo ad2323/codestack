@@ -9,7 +9,7 @@
       <q-input filled class="col-xs-12 col-md-6 col-lg-4 q-pa-md" v-model="lname" standout="bg-red text-white" label="Last Name" />
       <q-input filled class="col-xs-12 col-md-6 col-lg-4 q-pa-md" v-model="fname" standout="bg-red text-white" label="First Name" />
       <q-input filled class="col-xs-12 col-md-6 col-lg-4 q-pa-md" v-model="mname" standout="bg-red text-white" label="Middle Name" />
-      <q-input filled v-model="date" mask="##/##/####" label="Birthdate">
+      <q-input filled class="col-xs-12 col-md-6 col-lg-4 q-pa-md" v-model="date" mask="##/##/####" label="Birthdate">
         <template v-slot:append>
           <q-icon name="event" class="cursor-pointer">
             <q-popup-proxy ref="qDateProxy" transition-show="scale" transition-hide="scale">
@@ -40,7 +40,7 @@
         <q-select filled v-model="cStatus" :options="options" label="Filled" />
       </div>
       <div class="col-xs-12" v-if="cStatus == 'Married' ">
-        Name of your husband/wife
+        Nam e of your husband/wife
         <q-input filled class="col-xs-12 col-md-6 col-lg-4 q-pa-md" v-model="fullname" standout="bg-red text-white" label="Name of your husband/wife" />
         <!-- <input type="text" v-model="fullname" name="" id=""> -->
       </div>
