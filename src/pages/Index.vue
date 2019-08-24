@@ -48,13 +48,13 @@
         Mag mingle kana!
         <!-- <input type="text" v-model="fullname" name="" id=""> -->
       </div>
-      <div class="col-xs-12" v-for="(edu, index) in education" :key="index">
+      <div class="col-xs-12 col-md-12 col-lg-12 q-pa-md" v-for="(edu, index) in education" :key="index">
         <!-- <input type="text" v-model="edu.school" name="" id=""> -->
-        <q-input filled class="col-xs-12 col-md-6 col-lg-6 q-pa-md" v-model="edu.school" standout="bg-red text-white" label="Name of School" />
+        <q-input filled class="col-xs-10 col-md-10 col-lg-10" v-model="edu.school" standout="bg-red text-white" label="Name of School" />
         <!-- <button @click="delSchool(index)">Delete School</button> -->
-        <q-btn color="red" class="col-xs-12 col-md-3 col-lg-3 q-pa-md" @click="delSchool(index)" label="Delete School" />
+        <q-btn color="red" class="col-xs-12 col-md-1 col-lg-1 q-pa-md" @click="delSchool(index)" label="Delete School" />
       </div>
-      <q-btn color="primary" @click="addSchool" label="Add School" />
+      <q-btn class="col-xs-12 q-pa-md" color="primary" @click="addSchool" label="Add School" />
       <!-- <button @click="addSchool">Add new School</button> -->
     </div>
   </q-page>
