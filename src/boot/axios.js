@@ -9,6 +9,7 @@ export default async ({ Vue, router }) => {
     // console.log(admin)
     console.log('ADMIN? ' + route.meta.admin ? "Oo" : "Hindi" )
     if (admin){
+      alert('Not Admin')
       next('/')
     }
     else{

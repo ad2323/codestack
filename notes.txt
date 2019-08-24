@@ -65,3 +65,5 @@ for creating new page
 quasar new page Name
 
 
+basic middleware creation
+
