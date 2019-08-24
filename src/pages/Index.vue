@@ -106,17 +106,17 @@ export default {
           icon: "error"
         })
       }
-      else if( this.mname <= 0 ){
-        this.$q.notify({
-          message: "Middle Name Required!",
-          timeOut: 2500,
-          color: "red",
-          icon: "error"
-        })
-      }
+      // else if( this.mname <= 0 ){
+      //   this.$q.notify({
+      //     message: "Middle Name Required!",
+      //     timeOut: 2500,
+      //     color: "red",
+      //     icon: "error"
+      //   })
+      // }
       else{
         this.$q.notify({
-          message: "Hi " + this.fname + " " + this.mname + " " + this.lname,
+          message: `Hi ${this.fname} ${this.mname} ${this.lname}`,
           timeOut: 2500,
           color: "green",
           icon: "done"

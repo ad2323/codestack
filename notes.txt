@@ -11,7 +11,7 @@ quasar create name
 quasar dev -> when running get inside the project folder
 
 
-Goood Morning sir/maam/ate/kuya bali yung mga nakapag install na ng vue cli and quasar cli and nakapag create na ng web app na pwede na i live web server through quasar dev. 
+Goood Morning sir/maam/ate/kuya bali yung mga nakapag install na ng vue cli and quasar cli and nakapag create na ng web app na pwede na i live web server through quasar dev.
 
 Gagawa tayo ng simple application form with these fields
 
@@ -22,13 +22,13 @@ Gender/Sex = radio button
 Civil Status = select input (yung may dropdown options)
 
 Sa mga di pa nakainstall last meeting install na kayo ng vue and quasar cli
-Vue cli = npm install -g @vue/cli (for npm only) 
+Vue cli = npm install -g @vue/cli (for npm only)
 yarn global add @vue/cli
 (for yarn only)
 Quasar cli = npm install -g @quasar/cli (npm)
 yarn global add @quasar/cli (yarn)
 
-To check meron na si vue and quasar 
+To check meron na si vue and quasar
 vue -V
 quasar -v
 Pag may number after tinype niyo sa terminal, it means na install niyo na
@@ -38,21 +38,21 @@ Sa setup niyan no capital letters and spaces sa project name instead use - for t
 Yung mga description pwede niyo na i enter to proceed
 For selecting features select only Vuex and Axios. Arrow keys to navigate, space to select and deselect, enter to proceed.
 
-If they ase to install using npm or yarn, kung nag npm install, use npm if yarn add use yarn. Patience till pag na install. 
+If they ase to install using npm or yarn, kung nag npm install, use npm if yarn add use yarn. Patience till pag na install.
 
-After may makikita kayo na to get started. Pwede niyo na i open yung project niyo sa visual studio code, then open terminal then type quasar dev. 
+After may makikita kayo na to get started. Pwede niyo na i open yung project niyo sa visual studio code, then open terminal then type quasar dev.
 Pag updated browser niyo minsan nagshoshow na agad. Pag hindi makikita niyo yung link sa terminal.
 
-Kung may questions kayo regarding sa installation ask me. Wag Mahiya 😊😊. 
+Kung may questions kayo regarding sa installation ask me. Wag Mahiya 😊😊.
 
 -Happy Coding
 -Thien 😑 of CoseStack
 
-Btw basic input palang yan guys. 
+Btw basic input palang yan guys.
 
 <input type="text"> element
 
-Add ko lang sa mga nakagawa. Dun sa project folder niyo makikita niyo yung src and then pages and index.vue. Under dun sa template tag/element 
+Add ko lang sa mga nakagawa. Dun sa project folder niyo makikita niyo yung src and then pages and index.vue. Under dun sa template tag/element
 
 <template>
 put it inside here
@@ -60,3 +60,8 @@ put it inside here
 
 
 bla bla bla. VueJS trials
+
+for creating new page
+quasar new page Name
+
+
