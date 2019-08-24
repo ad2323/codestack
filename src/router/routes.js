@@ -4,9 +4,12 @@ const routes = [
     path: '/',
     component: () => import('layouts/MyLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Index.vue') }
+      { path: '', component: () => import('pages/Index.vue') },
+      { path: '/newpage/:pageid', component: () => import('pages/newpage.vue') },
+      { path: '/newpage/', component: () => import('pages/newpage.vue'), meta: {admin: true} }
     ]
   }
+
 ]
 
 // Always leave this as last one

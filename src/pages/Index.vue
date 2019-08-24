@@ -64,8 +64,8 @@
       </div>
       <div class="col-xs-12 col-md-12 col-lg-12 q-pa-md" >
         <q-btn color="primary" @click="submission" label="Submit" />
+        <q-btn color="primary" @click="$router.push('/newpage/qweqweweweq')" label="New Page" />
       </div>
-      <!-- <button @click="addSchool">Add new School</button> -->
     </div>
   </q-page>
 </template>
