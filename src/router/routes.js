@@ -4,9 +4,9 @@ const routes = [
     path: '/',
     component: () => import('layouts/MyLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/Index.vue') },
-      { path: '/newpage/:pageid', component: () => import('pages/newpage.vue') },
-      { path: '/newpage/', component: () => import('pages/newpage.vue'), meta: {admin: true} }
+      { path: '', component: () => import('pages/Index.vue'), meta: {admin: false} },
+      { path: '/newpage/:pageid', component: () => import('pages/newpage.vue'), meta: {admin: true} },
+      { path: '/newpage', component: () => import('pages/newpage.vue'), meta: {admin: true} }
     ]
   }
 

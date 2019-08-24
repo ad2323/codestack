@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <h3>New Page</h3>
+    <h3>Admin</h3>
     <h3>{{$route.params.pageid}}</h3>
   </q-page>
 </template>
