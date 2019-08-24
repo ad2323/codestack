@@ -50,11 +50,21 @@
       </div>
       <div class="col-xs-12 col-md-12 col-lg-12 q-pa-md" v-for="(edu, index) in education" :key="index">
         <!-- <input type="text" v-model="edu.school" name="" id=""> -->
-        <q-input filled class="col-xs-10 col-md-10 col-lg-10" v-model="edu.school" standout="bg-red text-white" label="Name of School" />
+        <div class="col-xs-12 col-md-6 col-lg-6">
+          <q-input filled v-model="edu.school" standout="bg-red text-white" label="Name of School" />
+        </div>
+        <div class="col-xs-12 col-md-6 col-lg-6">
+          <q-btn color="red" class="q-pa-xs" @click="delSchool(index)" rounded size="xs" icon="delete" />
+        </div>
         <!-- <button @click="delSchool(index)">Delete School</button> -->
-        <q-btn color="red" class="col-xs-12 col-md-1 col-lg-1 q-pa-md" @click="delSchool(index)" label="Delete School" />
+
       </div>
-      <q-btn class="col-xs-12 q-pa-md" color="primary" @click="addSchool" label="Add School" />
+      <div class="col-xs-12 col-md-12 col-lg-12 q-pa-md" >
+        <q-btn color="primary" @click="addSchool" label="Add School" />
+      </div>
+      <div class="col-xs-12 col-md-12 col-lg-12 q-pa-md" >
+        <q-btn color="primary" @click="submission" label="Submit" />
+      </div>
       <!-- <button @click="addSchool">Add new School</button> -->
     </div>
   </q-page>
@@ -78,7 +88,33 @@ export default {
     },
     delSchool (index) {
       this.education.splice(index, 1)
-    }
+    },
+    submission(){
+      if(  this.lname <= 0 ){
+        this.$q.notify({
+          message: "First Name Required!",
+          timeOut: 2500
+        })
+      }
+      else if( this.fname.length <= 0 ){
+        this.$q.notify({
+          message: "Last Name Required!",
+          timeOut: 2500
+        })
+      }
+      else if( this.mname <= 0 ){
+        this.$q.notify({
+          message: "Middle Name Required!",
+          timeOut: 2500
+        })
+      }
+      else{
+        this.$q.notify({
+          message: "Hi " + this.fname + " " + this.mname + " " + this.lname,
+          timeOut: 2500
+        })
+      }
+    },
   },
   data () {
     return {
@@ -86,9 +122,11 @@ export default {
       options: ["Single", "Married", "Divorced", "Widowed"],
       mname: "",
       lname: "",
+      gender: null,
       date: "08/24/2019",
       cStatus: "",
       fullname: "",
+      fulladdress: "",
       education: [
         {school: ""}
       ],
