@@ -8,14 +8,14 @@
         </div>
       </div>
 
-      Last Name <input class="col-xs-12 q-mx-md " type="text" name="lastName" placeholder="Last Name">
-      First Name <input class="col-xs-12 q-mx-md" type="text" name="firstName" placeholder="First Name">
-      Middle Name <input class="col-xs-12 q-mx-md" type="text" name="middleName" placeholder="Middle Name">
-      Birthday <input class="col-xs-12 q-mx-md" type="date" name="birthDay" placeholder="Birthday">
-      Address <textarea class="col-xs-12 q-mx-md" name="fullAddress" placeholder="Full Address" rows="5" cols="20"></textarea>
+      Last Name <input class="col-xs-12 q-mx-md " type="text" name="lastName" placeholder="Last Name" v-model="lastName">
+      First Name <input class="col-xs-12 q-mx-md" type="text" name="firstName" placeholder="First Name" v-model="firstName" >
+      Middle Name <input class="col-xs-12 q-mx-md" type="text" name="middleName" placeholder="Middle Name" v-model="middleName">
+      Birthday <input class="col-xs-12 q-mx-md" type="date" name="birthday" placeholder="Birthday" v-model="birthday">
+      Address <textarea class="col-xs-12 q-mx-md" name="fullAddress" placeholder="Full Address" rows="5" cols="20" v-model="address"></textarea>
       <div id="gender" class="col-xs-12">
         Gender
-        <input class="" type="radio" name="gender" value="male" checked>Male
+        <input class="" type="radio" name="gender" value="male">Male
         <input class="" type="radio" name="gender" value="female">Female
         <input class="" type="radio" name="gender" value="other">Other
       </div>
@@ -46,7 +46,13 @@
     },
     data(){
       return {
-        firstName:'Adrian'
+        lastName:'Cenizal',
+        firstName:'Adrian',
+        middleName:'Escubido',
+        address:'Addresssssss',
+        birthday:'23/09/1996',
+        gender:'male',
+        civil:'single',
       }
     }
   }
