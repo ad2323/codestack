@@ -4,7 +4,6 @@ DAY 1
   VueJS walkthrough
   QUASAR Framework (SPA's)(Multi-Platform desktop apps)
 
-
   install node
   install VueJS ->npm install -g @vue/cli
   install QUASAR ->npm install -g @quasar/cli
@@ -67,7 +66,7 @@ DAY 2
 
   >bla bla bla. VueJS trials
   >for creating new page
-  >quasar new page Name
+    >quasar new page Name
   >basic middleware creation
 
 
