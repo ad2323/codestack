@@ -1,3 +1,5 @@
+// filepath: src/layouts/MyLayout.vue
+
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
@@ -27,40 +29,40 @@
     >
       <q-list>
         <q-item-label header>Essential Links</q-item-label>
-        <q-item clickable to = "/" >
-          <q-item-section avatar>
-            <q-icon name="chat" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Home</q-item-label>
-            <q-item-label caption>/</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable to="/newpage/" >
+        <q-item clickable to="/newpage/asdlkasjd">
           <q-item-section avatar>
             <q-icon name="school" />
           </q-item-section>
           <q-item-section>
             <q-item-label>New Page</q-item-label>
-            <q-item-label caption>/newpage</q-item-label>
+            <q-item-label caption>Going to New Page</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item clickable to ="/counter">
+        <q-item clickable to="/counter">
           <q-item-section avatar>
             <q-icon name="code" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Counter Page</q-item-label>
-            <q-item-label caption>/counter</q-item-label>
+            <q-item-label>Counter</q-item-label>
+            <q-item-label caption>Go to counter</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://forum.quasar.dev">
+        <q-item clickable to="/">
           <q-item-section avatar>
-            <q-icon name="record_voice_over" />
+            <q-icon name="home" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Forum</q-item-label>
-            <q-item-label caption>forum.quasar.dev</q-item-label>
+            <q-item-label>Home</q-item-label>
+            <q-item-label caption>Home</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable to="/admin">
+          <q-item-section avatar>
+            <q-icon name="account_box" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Admin Dashboard</q-item-label>
+            <q-item-label caption>going to admin</q-item-label>
           </q-item-section>
         </q-item>
         <q-item clickable tag="a" target="_blank" href="https://twitter.quasar.dev">
