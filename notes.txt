@@ -77,3 +77,10 @@ DAY 3
 >Morning-Afternoon
 
 >Creation of a Simple NodeJS Web Service
+
+
+>Afternoon-
+  >mongo
+  >commands
+    >show dbs;
+    >use dbname;
