@@ -6,12 +6,14 @@ module.exports = function (ctx) {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     boot: [
-      'axios'
+      'axios',
+      'firebase'
     ],
 
     css: [
       'app.styl'
     ],
+
 
     extras: [
       // 'ionicons-v4',

@@ -1,7 +1,7 @@
 <template>
   <q-page padding>
     <!-- content -->
-    <!-- {{music}} -->
+    <!-- {{music}} -->{{musics}}
     <h3>Popular Music</h3>
     <q-card class="bg-blue text-white" style="max-width: 700px;">
       <q-card-section>
@@ -61,7 +61,8 @@ export default {
       song: null,
       played: null,
       uid: null,
-      musics: []
+      musics: [],
+      realTMusic: []
     }
   },
   methods: {
@@ -81,33 +82,66 @@ export default {
       }
     },
     addMusic (){
-      this.$axios.post('http://localhost:3000/music', {
+      // this.$axios.post('http://localhost:3000/music', {
+      //   artist: this.singer,
+      //   album: this.album,
+      //   song: this.song,
+      //   played: this.played
+      // }).then(response => {
+      //   console.log('response: ', response)
+      //   this.closeMusic()
+      //   this.getMusic()
+      // })
+
+      // socket.io
+      // this.socket.emit('send_music', {
+      //   artist: this.singer,
+      //   album: this.album,
+      //   song: this.song,
+      //   played: this.played
+      // })
+
+      // firebase
+      // firebase.firestore.collection('music').add()
+      this.$db.collection('music').add({
         artist: this.singer,
         album: this.album,
         song: this.song,
         played: this.played
-      }).then(response => {
-        console.log('response: ', response)
+      }).then(() => {
         this.closeMusic()
-        this.getMusic()
       })
     },
     updateMusic () {
-      this.$axios.put('http://localhost:3000/music/' + this.uid, {
+      // express node mongodb backend
+
+      // this.$axios.put('http://localhost:3000/music/' + this.uid, {
+      //   artist: this.singer,
+      //   album: this.album,
+      //   song: this.song,
+      //   played: this.played
+      // }).then(response => {
+      //   console.log('response: ', response)
+      //   this.closeMusic()
+      //   this.getMusic()
+      // })
+
+      // firebase
+
+      this.$db.collection('music').doc(this.uid).update({
         artist: this.singer,
         album: this.album,
         song: this.song,
         played: this.played
-      }).then(response => {
-        console.log('response: ', response)
+      }).then(() => {
         this.closeMusic()
-        this.getMusic()
       })
     },
     openMusic(data) {
       this.isAdd = false
       this.dialog = true
-      this.uid = data._id
+      // mongodb id = _id
+      this.uid = data.id
       this.singer = data.artist
       this.album = data.album
       this.song = data.song
@@ -123,15 +157,26 @@ export default {
       this.played = null
     },
     deleteMusic() {
-      this.$axios.delete('http://localhost:3000/music/' + this.uid).then(response => {
-        console.log(response)
+      // express node mongodb
+      // this.$axios.delete('http://localhost:3000/music/' + this.uid).then(response => {
+      //   console.log(response)
+      //   this.closeMusic()
+      //   this.getMusic()
+      // })
+
+      // firebase
+      this.$db.collection('music').doc(this.uid).delete().then(() => {
         this.closeMusic()
-        this.getMusic()
       })
     }
   },
-  created () {
-    this.getMusic()
+  mounted () {
+    this.$bind('musics', this.$db.collection('music'))
+    // from node backend
+    // this.getMusic()
+    // this.socket.on('getMusic', function(data) {
+    //   this.realTMusic = data
+    // })
   }
 }
 </script>

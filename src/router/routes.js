@@ -11,6 +11,7 @@ const routes = [
       { path: '/admin', component: () => import('pages/admin/dashboard.vue'), meta: {pangAdmin: true} },
       { path: '/counter', component: () => import('pages/counter.vue'), meta: {pangAdmin: false} },
       { path: '/music', component: () => import('pages/music.vue'), meta: {pangAdmin: false} },
+      { path: '/music1', component: () => import('pages/musicChart.vue'), meta: {pangAdmin: false} },
     ]
   }
 ]
