@@ -1,4 +1,3 @@
-
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
@@ -93,6 +92,7 @@
 
 <script>
 import { openURL } from 'quasar'
+
 export default {
   name: 'MyLayout',
   data () {

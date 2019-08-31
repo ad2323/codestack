@@ -1,4 +1,3 @@
-// filepath: src/pages/counter.vue
 
 <template>
   <q-page padding>
@@ -31,4 +30,3 @@ export default {
 
 <style>
 </style>
-w

@@ -9,11 +9,13 @@ const app = express()
 const mongoose = require('mongoose')
 const port = 3000
 // your songs collection or table na galing sa models folder
-const tblsong = require('./models/musicModel')
+const musicModel = require('./models/musicModel')
 // para sa mga naka cloud => mongodb+srv://<user>:<password>@mydatabase-rppom.mongodb.net/<database_name>?retryWrites=true&w=majority
 // sa mga naka cloud, i enable ang allow access everwhere sa network access / whitelist sa left side para maacess natin si database
 // para sa mga naka shell or community server (ui) => mongodb://127.0.0.1:27017/music
-mongoose.connect('mongodb://127.0.0.1:27017/codestack', {useNewUrlParser: true})
+mongoose.connect('mongodb://127.0.0.1:27017/music', {
+  useNewUrlParser: true
+})
 
 // comment niyo to kasi para makuha ang music data tatawagin si Song na nanggaling kay "const Song = require('./models/musicModel')"
 // dun sa models folder, siya na yung collection or table
@@ -39,7 +41,7 @@ app.get('/users/:userid', (req, res) => res.send(`Hello ${req.params.userid} Fro
 app.get('/music/:id', (req, res) => {
   // res.json(music[req.params.id])
   // SQL Statement => Select * from tblsong where id = req.params.id
-  tblsong.findById(req.params.id).then(doc => {
+  musicModel.findById(req.params.id).then(doc => {
     console.log(doc)
     res.send(doc)
   }).catch(err => {
@@ -53,7 +55,9 @@ app.put('/music/:id', (req, res) => {
   // SQL Statement => Update tblsong set name = req.body.name (syntax: column/field = value) where id = req.params.id
   console.log(req.body)
   // pwede rin gamiiin si findOneAndUpdate or si updateOne kasi pareho lang ang process
-  tblsong.updateOne({_id: req.params.id}, req.body).then(
+  musicModel.updateOne({
+    _id: req.params.id
+  }, req.body).then(
     res.send('A music has been updated!')
   )
 })
@@ -61,7 +65,7 @@ app.put('/music/:id', (req, res) => {
 app.get('/music', (req, res) => {
   // res.json(music)
   // SQL Statement => Select * from tblsong
-  tblsong.find().then(doc => {
+  musicModel.find().then(doc => {
     console.log(doc)
     res.send(doc)
   }).catch(err => {
@@ -70,22 +74,27 @@ app.get('/music', (req, res) => {
 })
 // post request add item
 app.post('/music', (req, res) => {
-  console.log("data: " , req.body)
+  console.log("data: ", req.body)
   // music.push(req.body)
   // res.status(200).send("a music has added")
   // Add a new song on the database
   // const song = new
   // SQL Statement => Insert into tblsong value name = req.body.name (syntax: column/field = value)
-  tblsong({
+  musicModel({
     _id: new mongoose.Types.ObjectId(),
-    name: req.body.name
+    artist: req.body.artist,
+    album: req.body.album,
+    song: req.body.song,
+    played: req.body.played,
   }).save().then(result => {
     // si result callback function na nandito yung dinagdag na data
     console.log('result', result)
     res.status(200).send('A music has been added');
   }).catch(err => {
     console.log(err)
-    res.status(500).json({error: err});
+    res.status(500).json({
+      error: err
+    });
   })
 })
 // delete music request
@@ -93,12 +102,14 @@ app.delete('/music/:id', (req, res) => {
   console.log(req.params.id)
   // pwede rin gamitin si findByIdAndDelete or si deleteOne kasi pareho lang ang process
   // SQL Statement => Delete from tblsong  where id = req.params.id
-  tblsong.deleteOne({_id: req.params.id}, req.body).then(
+  musicModel.deleteOne({
+    _id: req.params.id
+  }, req.body).then(
     res.send('A music has been Deleted!')
   )
 })
 
-function sendhello (req, res, next) {
+function sendhello(req, res, next) {
   res.send('Hello !' + req.params.userid)
   next()
 }

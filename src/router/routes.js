@@ -9,7 +9,8 @@ const routes = [
       // { path: '/newpage/:pageid', component: () => import('pages/newpage.vue'), meta: {pangAdmin: false} }, // sub path or sub directory example: hostname.com/newpage/1
       { path: '/newpage', component: () => import('pages/newpage.vue'), meta: {pangAdmin: false} },
       { path: '/admin', component: () => import('pages/admin/dashboard.vue'), meta: {pangAdmin: true} },
-      { path: '/counter', component: () => import('pages/counter.vue'), meta: {pangAdmin: false} }
+      { path: '/counter', component: () => import('pages/counter.vue'), meta: {pangAdmin: false} },
+      { path: '/music', component: () => import('pages/music.vue'), meta: {pangAdmin: false} },
     ]
   }
 ]
