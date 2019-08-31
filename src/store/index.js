@@ -1,5 +1,9 @@
+// filepath: src/store/index.js
+
 import Vue from 'vue'
 import Vuex from 'vuex'
+
+// import the modules
 import example from './module-example'
 
 Vue.use(Vuex)
@@ -17,8 +21,7 @@ export default function (/* { ssrContext } */) {
 
     // enable strict mode (adds overhead!)
     // for dev mode only
-    // strict: process.env.DEV
-    strict: false
+    strict: false // process.env.DEV
   })
 
   return Store

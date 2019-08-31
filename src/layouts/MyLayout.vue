@@ -1,4 +1,3 @@
-// filepath: src/layouts/MyLayout.vue
 
 <template>
   <q-layout view="lHh Lpr lFf">
@@ -94,7 +93,6 @@
 
 <script>
 import { openURL } from 'quasar'
-
 export default {
   name: 'MyLayout',
   data () {

@@ -1,12 +1,15 @@
+// filepath: src/pages/counter.vue
+
 <template>
   <q-page padding>
-    <q-card>
+    <!-- content -->
+    <q-card class="bg-blue text-center">
       <q-card-section>
-        <h3>{{ $store.getters['example/getCount']}}</h3>
+        <h4>{{$store.getters['example/getCount']}}</h4>
       </q-card-section>
       <q-card-section>
-        <q-btn label="Add" @click = "plusCounter" rounded color="purple" size="15pt"/>
-        <q-btn label="Reset" @click= "resetCounter" rounded color="red" size="15pt"/>
+        <q-btn label="Add" @click="plusCounter" rounded color="purple" size="80px"/>
+        <q-btn label="Reset" @click="resetCounter" rounded color="purple" size="80px"/>
       </q-card-section>
     </q-card>
   </q-page>
@@ -14,11 +17,12 @@
 
 <script>
 export default {
+  // name: 'Counter',
   methods: {
-    plusCounter(){
+    plusCounter () {
       this.$store.commit('example/addCounter')
     },
-    resetCounter(){
+    resetCounter () {
       this.$store.commit('example/resetCounter')
     }
   }
@@ -27,3 +31,4 @@ export default {
 
 <style>
 </style>
+w

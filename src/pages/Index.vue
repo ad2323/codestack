@@ -1,4 +1,3 @@
-// filepath: src/pages/Index.vue
 
 <template>
   <q-page padding>
@@ -70,9 +69,9 @@
 </template>
 
 <style>
-  .something {
-    padding: 15px;
-  }
+.something {
+  padding: 15px;
+}
 </style>
 
 <script>

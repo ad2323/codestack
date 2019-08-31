@@ -1,7 +1,9 @@
+// filepath: src/store/module-example/mutations.js
+
 export function addCounter (state) {
-  state.counter += 1
+  state.counter++
 }
 
-export function resetCounter(state){
+export function resetCounter (state) {
   state.counter = 1
 }

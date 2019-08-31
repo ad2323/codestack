@@ -44,19 +44,17 @@ module.exports = function (ctx) {
       //   'QList',
       //   'QItem',
       //   'QItemSection',
-      //   'QItemLabel',
-      //   'QInput',
-      //   'QForm',
+      //   'QItemLabel'
       // ],
 
-      directives: [
-        'Ripple'
-      ],
+      // directives: [
+      //   'Ripple'
+      // ],
 
-      // Quasar plugins
-      plugins: [
-        'Notify'
-      ]
+      // // Quasar plugins
+      // plugins: [
+      //   'Notify'
+      // ]
     },
 
     supportIE: false,
@@ -89,9 +87,9 @@ module.exports = function (ctx) {
       // workboxPluginMode: 'InjectManifest',
       // workboxOptions: {}, // only for NON InjectManifest
       manifest: {
-        // name: 'Day1 App',
-        // short_name: 'Day1 App',
-        // description: 'The Day 1 output App',
+        // name: 'Quasar App',
+        // short_name: 'Quasar App',
+        // description: 'A Quasar Framework app',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
@@ -127,7 +125,7 @@ module.exports = function (ctx) {
     },
 
     cordova: {
-      // id: 'org.cordova.quasar.app',
+      // id: 'com.lodi.app',
       // noIosLegacyBuildFlag: true, // uncomment only if you know what you are doing
     },
 
@@ -155,7 +153,7 @@ module.exports = function (ctx) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        // appId: 'day1'
+        // appId: 'lodi-sys'
       }
     }
   }
